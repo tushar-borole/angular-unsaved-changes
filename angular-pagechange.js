@@ -5,10 +5,10 @@
         .module('angular-pagechage', [])
         .directive('pageChange', pageChange);
 
-    pageChange.$inject = ['$rootScope','$state'];
+    pageChange.$inject = ['$rootScope', '$state'];
 
     /* @ngInject */
-    function pageChange($rootScope,$state) {
+    function pageChange($rootScope, $state) {
         // Usage:
         //
         // Creates:
@@ -29,38 +29,91 @@
                     // a 'transition prevented' error
 
 
-                 
 
-                        var selector = $(element).find("[ng-model]");
 
-                        $(selector).each(function (i, obj) {
+                    var selector = $(element).find("[page-change-element]");
 
-                            var model = angular.element($(obj)).controller('ngModel')
+                    $(selector).each(function (i, obj) {
 
-                            if (!model.$pristine) {
-                                event.preventDefault()
-                                scope.$evalAsync(attrs.pageChange, {
-                                    $event: event,
-                                    $toState: toState,
-                                    $fromState: fromState,
-                                    $toParams: toParams,
-                                    $fromParams: fromParams,
-                                    $cancel:scope
-                                });
-                                return false
-                            }
-                        });
-                  
+                        var model = angular.element($(obj)).controller('ngModel')
+
+                        if (model.$isChanged) {
+                            event.preventDefault()
+                            scope.$evalAsync(attrs.pageChange, {
+                                $event: event,
+                                $toState: toState,
+                                $fromState: fromState,
+                                $toParams: toParams,
+                                $fromParams: fromParams,
+                                $cancel: scope
+                            });
+                            return false
+                        }
+                    });
+
 
                 })
+
+
+
+
+
+        }
+    }
+
+})();
+
+(function () {
+    'use strict';
+
+    angular
+        .module('angular-pagechage')
+        .directive('pageChangeElement', pageChangeElement);
+
+    pageChangeElement.$inject = ['$rootScope'];
+
+    /* @ngInject */
+    function pageChangeElement($rootScope) {
+        // Usage:
+        //
+        // Creates:
+        //
+        var directive = {
+            link: link,
+            require: 'ngModel'
+        };
+        return directive;
+
+        function link(scope, element, attrs, ngModel) {
+            function isEmpty(val) {
+                return (val === undefined || val == null || val.length <= 0) ? null : val;
+            }
+
+            scope.$watch(attrs.ngModel, function (value) {
+
+                value=isEmpty(value)
+
+                if (ngModel.$pristine) { //if form is touched or not
+               
+                    ngModel.$initialValue = value;
+
+
+
+
+
+                }
+
             
-             scope.$on("$destroy", function() {
-                 console.log("inn")
-      
-    });
+                if (value == ngModel.$initialValue) {
+                    ngModel.$isChanged = false;
+
+                } else {
+                    ngModel.$isChanged = true;
+                }
+                console.log(ngModel.$isChanged)
 
 
-
+            });
 
         }
     }
