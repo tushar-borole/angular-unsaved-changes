@@ -1,6 +1,10 @@
-<div page-change="chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel)" >
+<div class="page1" page-change="chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel)">
 
+    <p>Try changing text here and chage the page</p>
 
-<input page-change-element  type="text"  ng-model="hey" placeholder="enterhere"/>
+    <input page-change-element type="text" ng-model="hey" placeholder="Type text here" />
+    <div>
+    <a class="btn" ui-sref="home.page2">change page</a>
+        </div>
 
 </div>

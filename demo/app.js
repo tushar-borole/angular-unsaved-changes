@@ -9,18 +9,18 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
     // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
         url: '/home',
-        templateUrl: 'partial-home.html'
+        templateUrl: 'demo/partial-home.html'
     })
 
     // nested list with custom controller
     .state('home.page1', {
         url: '/page1',
-        templateUrl: 'page1.html',
+        templateUrl: 'demo/page1.html',
         controller: function ($scope, $state) {
             $scope.chageStatus = true
             $scope.chageMe = function ($event, $toState, $toParams, $fromState, $fromParams,$cancel) {
                
-                var r = confirm("Press a button");
+                var r = confirm("Are you sure you want to chage the page");
                 if (r == true) {
                     $cancel.$destroy();
                     $state.go($toState.name)
@@ -37,7 +37,7 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
     // nested list with just some random string data
     .state('home.page2', {
         url: '/page2',
-        templateUrl: 'page2.html'
+        templateUrl: 'demo/page2.html'
     })
 
 
