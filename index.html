@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -14,47 +15,60 @@
     <![endif]-->
 
     <title>Angular-unsaved-changes by tushariscoolster</title>
-  </head>
+</head>
 
-  <body>
+<body ng-app="routerApp">
     <header>
-      <div class="inner">
-        <h1>Angular-unsaved-changes</h1>
-        <h2>popup when page changed where data is still not saved</h2>
-        <a href="https://github.com/tushariscoolster/angular-unsaved-changes" class="button"><small>View project on</small> GitHub</a>
-      </div>
+        <div class="inner">
+            <h1>Angular-unsaved-changes</h1>
+            <h2>popup when page changed where data is still not saved</h2>
+            <a href="https://github.com/tushariscoolster/angular-unsaved-changes" class="button"><small>View project on</small> GitHub</a>
+        </div>
     </header>
 
     <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+        <div class="inner clearfix">
+            <section id="main-content">
+                <h1>
 <a id="angular-unsaved-changes" class="anchor" href="#angular-unsaved-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>angular-unsaved-changes</h1>
 
-<p>angular directive to show popup when user chage the page and there is still unsaved chages on the page</p>
+                <p>angular directive to show popup when user chage the page and there is still unsaved chages on the page</p>
 
-<h1>
+                  <h1>
+<a id="angular-unsaved-changes" class="anchor" href="#angular-unsaved-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+                
+                
+               
+
+                <!-- MAIN CONTENT -->
+                <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+                <div class="container">
+                    <div ui-view></div>
+                </div>
+
+
+                <h1>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h1>
 
-<p>Install via bower</p>
+                <p>Install via bower</p>
 
-<div class="highlight highlight-sh"><pre>bower install angular-unsaved-changes</pre></div>
+                <div class="highlight highlight-sh"><pre>bower install angular-unsaved-changes</pre></div>
 
-<p>Install via npm</p>
+                <p>Install via npm</p>
 
-<div class="highlight highlight-sh"><pre>npm install angular-unsaved-changes</pre></div>
+                <div class="highlight highlight-sh"><pre>npm install angular-unsaved-changes</pre></div>
 
-<p>Add dependency in your module</p>
+                <p>Add dependency in your module</p>
 
-<div class="highlight highlight-javascript"><pre>angular.<span class="pl-c1">module</span>(<span class="pl-s"><span class="pl-pds">'</span>yourApp<span class="pl-pds">'</span></span>,[   <span class="pl-s"><span class="pl-pds">'</span>angular-unsaved-changes<span class="pl-pds">'</span></span> ]); </pre></div>
+                <div class="highlight highlight-javascript"><pre>angular.<span class="pl-c1">module</span>(<span class="pl-s"><span class="pl-pds">'</span>yourApp<span class="pl-pds">'</span></span>,[   <span class="pl-s"><span class="pl-pds">'</span>angular-unsaved-changes<span class="pl-pds">'</span></span> ]); </pre></div>
 
-<h1>
+                <h1>
 <a id="configure" class="anchor" href="#configure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure</h1>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">page-change</span>=<span class="pl-s"><span class="pl-pds">"</span>chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel</span>
+                <div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">page-change</span>=<span class="pl-s"><span class="pl-pds">"</span>chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel</span>
 <span class="pl-s">&lt;input page-change-element  type=<span class="pl-pds">"</span></span><span class="pl-e">text</span><span class="pl-s"><span class="pl-pds">"</span>  ng-model=<span class="pl-pds">"</span></span><span class="pl-e">hey</span><span class="pl-s"><span class="pl-pds">"</span> placeholder=<span class="pl-pds">"</span></span><span class="pl-e">enterhere</span><span class="pl-s"><span class="pl-pds">"</span>/&gt;&lt;/div&gt;</span></pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-c1">$scope</span>.<span class="pl-en">chageMe</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">$event</span>, <span class="pl-smi">$toState</span>, <span class="pl-smi">$toParams</span>, <span class="pl-smi">$fromState</span>, <span class="pl-smi">$fromParams</span>,<span class="pl-smi">$cancel</span>) {
+                <div class="highlight highlight-javascript"><pre><span class="pl-c1">$scope</span>.<span class="pl-en">chageMe</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">$event</span>, <span class="pl-smi">$toState</span>, <span class="pl-smi">$toParams</span>, <span class="pl-smi">$fromState</span>, <span class="pl-smi">$fromParams</span>,<span class="pl-smi">$cancel</span>) {
 
                 <span class="pl-k">var</span> r <span class="pl-k">=</span> <span class="pl-c1">confirm</span>(<span class="pl-s"><span class="pl-pds">"</span>Press a button<span class="pl-pds">"</span></span>);
                 <span class="pl-k">if</span> (r <span class="pl-k">==</span> <span class="pl-c1">true</span>) {
@@ -64,95 +78,86 @@
                 }
             }</pre></div>
 
-<h3>
+                <h3>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h3>
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Option</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>page-change</td>
-<td><code>'chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel)'</code></td>
-</tr>
-<tr>
-<td>page-change-element</td>
-<td><code>"input which should be checked"</code></td>
-</tr>
-</tbody>
-</table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>page-change</td>
+                            <td><code>'chageMe($event, $toState, $toParams, $fromState, $fromParams,$cancel)'</code></td>
+                        </tr>
+                        <tr>
+                            <td>page-change-element</td>
+                            <td><code>"input which should be checked"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-<hr>
+                <hr>
 
-<h2>
+                <h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
-<p>Open an issue first to discuss potential changes/additions. If you have questions with the guide, feel free to leave them as issues in the repository. If you find a typo, create a pull request. The idea is to keep the content up to date and use github’s native feature to help tell the story with issues and PR’s, which are all searchable via google. Why? Because odds are if you have a question, someone else does too! You can learn more here at about how to contribute.</p>
+                <p>Open an issue first to discuss potential changes/additions. If you have questions with the guide, feel free to leave them as issues in the repository. If you find a typo, create a pull request. The idea is to keep the content up to date and use github’s native feature to help tell the story with issues and PR’s, which are all searchable via google. Why? Because odds are if you have a question, someone else does too! You can learn more here at about how to contribute.</p>
 
-<p><em>By contributing to this repository you are agreeing to make your content available subject to the license of this repository.</em></p>
+                <p><em>By contributing to this repository you are agreeing to make your content available subject to the license of this repository.</em></p>
 
-<h3>
+                <h3>
 <a id="process" class="anchor" href="#process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Process</h3>
 
-<pre><code>1. Discuss the changes in a GitHub issue.
+                <pre><code>1. Discuss the changes in a GitHub issue.
 2. Open a Pull Request, reference the issue, and explain the change and why it adds value.
 3. The Pull Request will be evaluated and either merged or declined.
 </code></pre>
 
-<h2>
+                <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>Use this guide. Attributions are appreciated._</p>
+                <p>Use this guide. Attributions are appreciated._</p>
 
-<h3>
+                <h3>
 <a id="copyright" class="anchor" href="#copyright" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copyright</h3>
 
-<p>Copyright (c) 2014-2015 <a href="http://www.tusharborole.com">Tushar Borole</a></p>
+                <p>Copyright (c) 2014-2015 <a href="http://www.tusharborole.com">Tushar Borole</a></p>
 
-<h3>
+                <h3>
 <a id="the-mit-license" class="anchor" href="#the-mit-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>(The MIT License)</h3>
 
-<p>Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:</p>
+                <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
-<p>The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.</p>
+                <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 
-<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-        </section>
+                <p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+            </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/tushariscoolster/angular-unsaved-changes/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/tushariscoolster/angular-unsaved-changes/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+            <aside id="sidebar">
+                <a href="https://github.com/tushariscoolster/angular-unsaved-changes/zipball/master" class="button">
+                    <small>Download</small> .zip file
+                </a>
+                <a href="https://github.com/tushariscoolster/angular-unsaved-changes/tarball/master" class="button">
+                    <small>Download</small> .tar.gz file
+                </a>
 
-          <p class="repo-owner"><a href="https://github.com/tushariscoolster/angular-unsaved-changes"></a> is maintained by <a href="https://github.com/tushariscoolster">tushariscoolster</a>.</p>
+                <p class="repo-owner">
+                    <a href="https://github.com/tushariscoolster/angular-unsaved-changes"></a> is maintained by <a href="https://github.com/tushariscoolster">tushariscoolster</a>.</p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+                <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+            </aside>
+        </div>
     </div>
+    <script src="https://code.angularjs.org/1.3.17/angular.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="angular-pagechange.js"></script>
+    <script src="demo/app.js"></script>
 
-  
-  </body>
+</body>
+
 </html>
