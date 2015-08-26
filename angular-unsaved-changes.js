@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('angular-pagechage', [])
+        .module('angular-unsaved-changes', [])
         .directive('pageChange', pageChange);
 
     pageChange.$inject = ['$rootScope', '$state'];
@@ -67,7 +67,7 @@
     'use strict';
 
     angular
-        .module('angular-pagechage')
+        .module('angular-unsaved-changes')
         .directive('pageChangeElement', pageChangeElement);
 
     pageChangeElement.$inject = ['$rootScope'];
