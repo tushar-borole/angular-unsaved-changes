@@ -37,8 +37,8 @@
 
                         var model = angular.element($(obj)).controller('ngModel')
 
-                        if (model.$isChanged) {
-                            event.preventDefault()
+                        if (model.$isChanged && model.$dirty) {
+                            event.preventDefault();
                             scope.$evalAsync(attrs.pageChange, {
                                 $event: event,
                                 $toState: toState,
@@ -91,10 +91,10 @@
 
             scope.$watch(attrs.ngModel, function (value) {
 
-                value=isEmpty(value)
+                value = isEmpty(value)
 
                 if (ngModel.$pristine) { //if form is touched or not
-               
+
                     ngModel.$initialValue = value;
 
 
@@ -103,7 +103,7 @@
 
                 }
 
-            
+
                 if (value == ngModel.$initialValue) {
                     ngModel.$isChanged = false;
 
