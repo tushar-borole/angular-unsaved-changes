@@ -55,7 +55,10 @@
                 })
 
 
+  scope.destroyUnsavedChanges = function () {
+                scope.$destroy();
 
+            }
 
 
         }

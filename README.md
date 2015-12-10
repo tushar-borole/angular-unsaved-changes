@@ -39,6 +39,8 @@ $scope.chageMe = function ($event, $toState, $toParams, $fromState, $fromParams,
                 } else {
                 }
             }
+            
+              $scope.destroyUnsavedChanges() to destroy the directive, so that on success we can have treansition to another page
 ```
 
 ### Documentation
