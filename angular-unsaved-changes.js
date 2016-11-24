@@ -113,7 +113,7 @@
                 } else {
                     ngModel.$isChanged = true;
                 }
-                console.log(ngModel.$isChanged)
+                
 
 
             });
