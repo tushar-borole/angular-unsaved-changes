@@ -23,7 +23,7 @@
 
 
             scope.$on('$stateChangeStart',
-                function (event, toState, fromState, toParams, fromParams) {
+                function (event, toState, toParams, fromState, fromParams) {
                     // event.preventDefault();
                     // transitionTo() promise will be rejected with 
                     // a 'transition prevented' error
@@ -113,7 +113,7 @@
                 } else {
                     ngModel.$isChanged = true;
                 }
-                console.log(ngModel.$isChanged)
+                
 
 
             });
